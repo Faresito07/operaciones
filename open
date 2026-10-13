@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double num1, num2, resultado;
+        int opcion;
+        String continuar;
+
+        do {
+            System.out.print("Introduce el primer numero: ");
+            num1 = sc.nextDouble();
+
+            System.out.print("Introduce el segundo numero: ");
+            num2 = sc.nextDouble();
+
+            System.out.println("\nElige una operacion:");
+            System.out.println("1. Sumar");
+            System.out.println("2. Restar");
+            System.out.println("3. Multiplicar");
+            System.out.println("4. Dividir");
+            System.out.print("Opcion: ");
+            opcion = sc.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    resultado = num1 + num2;
+                    System.out.println("Resultado: " + resultado);
+                    break;
+
+                case 2:
+                    resultado = num1 - num2;
+                    System.out.println("Resultado: " + resultado);
+                    break;
+
+                case 3:
+                    resultado = num1 * num2;
+                    System.out.println("Resultado: " + resultado);
+                    break;
+
+                case 4:
+                    if (num2 != 0) {
+                        resultado = num1 / num2;
+                        System.out.println("Resultado: " + resultado);
+                    } else {
+                        System.out.println("Error: no se puede dividir entre cero.");
+                    }
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+            }
+
+            System.out.print("\n¿Quieres hacer otra operacion? (si/no): ");
+            continuar = sc.next();
+
+        } while (continuar.equalsIgnoreCase("si"));
+
+        System.out.println("¡Gracias por usar la calculadora!");
+        sc.close();
+    }
+}
+
+¿Cómo funciona?
+
+    Pide dos números al usuario.
+
+    Le muestra un menú para elegir la operación.
+
+    Realiza la operación seleccionada y muestra el resultado.
+
+    Pregunta si quiere hacer otra operación.
+
+    Si responde si, vuelve a empezar; si responde no, termina.
+
+Ejemplo de ejecución:
+text
+
+Introduce el primer numero: 10
+Introduce el segundo numero: 5
+
+Elige una operacion:
+1. Sumar
+2. Restar
+3. Multiplicar
+4. Dividir
+Opcion: 1
+Resultado: 15.0
+
+¿Quieres hacer otra operacion? (si/no): no
+¡Gracias por usar la calculadora!
